@@ -1,0 +1,24 @@
+# Environment Files
+.env
+.env.*
+!.env.example
+
+# Python venv
+.venv/
+**/.venv/
+
+# Python Cache
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Pytest
+.pytest_cache/
+**/.pytest_cache/
+
+# IDE
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
