@@ -20,3 +20,14 @@ def create_dataset_columns(
 
     db.add_all(records)
     db.flush()
+
+def get_columns_by_dataset_id(
+    db: Session,
+    dataset_id: int,
+) -> list[DatasetColumn]:
+    return (
+        db.query(DatasetColumn)
+        .filter(DatasetColumn.dataset_id == dataset_id)
+        .order_by(DatasetColumn.id)
+        .all()
+    )

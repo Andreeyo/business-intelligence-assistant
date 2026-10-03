@@ -21,3 +21,23 @@ def create_dataset(
     db.flush()
 
     return dataset
+
+def get_datasets(
+    db: Session,
+) -> list[Dataset]:
+    return (
+        db.query(Dataset)
+        .order_by(Dataset.id)
+        .all()
+    )
+
+
+def get_dataset_by_id(
+    db: Session,
+    dataset_id: int,
+) -> Dataset | None:
+    return (
+        db.query(Dataset)
+        .filter(Dataset.id == dataset_id)
+        .first()
+    )
